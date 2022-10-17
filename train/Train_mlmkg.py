@@ -86,9 +86,6 @@ def train_mlmkg(args, model, train_dataset, dev_dataset, test_dataset):
             MLM_labels = inputs["MLM_labels"].to(args.device)
             cls_label = inputs["cls_label"].to(args.device)
 
-            for k, v in inputs.items():
-                inputs[k] = v.to(args.device)
-
             if random.random() < MLM_input_prob:
                 outputs = model(
                     input_ids=MLM_input_ids,
