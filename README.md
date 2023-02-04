@@ -1,6 +1,20 @@
 # FPC
 
-This repository contains the source code of the AACL 2022 paper FPC: Fine-tuning with Prompt Curriculum for Relation Extraction.
+This repository contains the source code of the AACL 2022 paper: [FPC: Fine-tuning with Prompt Curriculum for Relation Extraction](https://aclanthology.org/2022.aacl-main.78/).
+
+If you use our code or you find our paper is related to your work, please kindly cite our paper:
+
+```
+@inproceedings{yang2022fpc,
+  title={FPC: Fine-tuning with Prompt Curriculum for Relation Extraction},
+  author={Yang, Sicheng and Song, Dandan},
+  booktitle={Proceedings of the 2nd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 12th International Joint Conference on Natural Language Processing},
+  pages={1065--1077},
+  year={2022}
+}
+```
+
+## Overview
 
 In this paper, we propose a novel method **Fine-tuning with Prompt Curriculum (FPC)** for relation extraction (RE).
 
