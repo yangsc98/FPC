@@ -22,20 +22,20 @@ In this paper, we propose a novel method **Fine-tuning with Prompt Curriculum (F
 
 * The **prompt learning curriculum (PLC)** makes the model adapt to the multi-task setting by learning the increasingly difficult sub-task, which makes the model build the connection between the targets of classification and MLM.
 
-## Reqirements
+## Requirements
 
 * Install Anaconda and create the specific conda environment.
 
 ```
-conda create -n FPC_env python=3.8
-conda activate FPC_env
+conda create -n FPC python=3.9
+conda activate FPC
 ```
 
 * Install pytorch and transformers with pip or conda.
 
 ```
-conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch-lts
-pip install transformers==4.10.3
+conda install pytorch==1.10.1 torchvision==0.11.2 torchaudio==0.10.1 cudatoolkit=11.3 -c pytorch -c conda-forge
+pip install transformers==4.12.5
 ```
 
 ## Datasets
