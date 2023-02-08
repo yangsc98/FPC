@@ -169,11 +169,11 @@ def train_mlmkg(args, model, train_dataset, dev_dataset, test_dataset):
         "dev_pred_list": dev_pred_list,
         "test_pred_list": test_pred_list
     }
-    with open(args.saved_result_path, 'w', encoding='utf-8') as file:
+    with open(args.saved_result_path, "w", encoding="utf-8") as file:
         json.dump(saved_result_dict, file)
 
     if args.save_model:
         torch.save(saved_state_dict, args.saved_model_path)
 
-        with open(args.saved_args_path, 'w', encoding='utf8') as file:
+        with open(args.saved_args_path, "w", encoding="utf8") as file:
             json.dump(args.__dict__, file)

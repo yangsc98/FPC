@@ -43,7 +43,7 @@ def evaluate(args, model, dataset):
             cls_logits = outputs["cls_logits"]
 
         preds = torch.argmax(cls_logits, dim=-1)
-        pred_array = np.append(pred_array, preds.to('cpu').numpy())
+        pred_array = np.append(pred_array, preds.to("cpu").numpy())
 
     precision, recall, micro_f1 = f1_score(pred_array, label_array, args.label_num)
 

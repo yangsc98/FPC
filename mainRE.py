@@ -36,18 +36,18 @@ def main():
     parser = argparse.ArgumentParser()
 
     # Mode
-    parser.add_argument("--train", action='store_true')
-    parser.add_argument("--evaluate", action='store_true')
+    parser.add_argument("--train", action="store_true")
+    parser.add_argument("--evaluate", action="store_true")
 
     # Dataset
-    parser.add_argument('--dataset_name', type=str, default="tacred", help='["tacred", "tacrev", "retacred", "semeval"]')
-    parser.add_argument('--template', type=str, default="Simple", help='["Simple", "Ent", "Typ", "EntTyp"]')
+    parser.add_argument("--dataset_name", type=str, default="tacred", help='["tacred", "tacrev", "retacred", "semeval"]')
+    parser.add_argument("--template", type=str, default="Simple", help='["Simple", "Ent", "Typ", "EntTyp"]')
     parser.add_argument("--max_seq_len", type=int, default=512)
 
     # Model
     parser.add_argument("--folder_name", type=str, default="exp_1")
-    parser.add_argument('--downloaded_model', action='store_true')
-    parser.add_argument("--use_gradient_checkpoint", action='store_true')
+    parser.add_argument("--downloaded_model", action="store_true")
+    parser.add_argument("--use_gradient_checkpoint", action="store_true")
 
     parser.add_argument("--model_train", type=str, default="base", help='["base", "mlm", "mlmkg", "mlmkg_2"]')
     parser.add_argument("--mlm_ratio", type=float, default=0.4)
@@ -57,29 +57,29 @@ def main():
     parser.add_argument("--train_batch_size", type=int, default=32)
     parser.add_argument("--eval_batch_size", type=int, default=32)
     parser.add_argument("--gradient_accumulation_steps", type=int, default=2)
-    parser.add_argument('--num_workers', type=int, default=4)
+    parser.add_argument("--num_workers", type=int, default=4)
 
     # Train
     parser.add_argument("--num_train_epochs", type=int, default=5)
     parser.add_argument("--learning_rate", type=float, default=3e-5)
     parser.add_argument("--warmup_step_ratio", type=float, default=0.1)
-    parser.add_argument('--weight_decay', type=float, default=1e-5)
+    parser.add_argument("--weight_decay", type=float, default=1e-5)
     parser.add_argument("--adam_epsilon", type=float, default=1e-8)
     parser.add_argument("--max_grad_norm", type=float, default=1.0)
 
     # Device
-    parser.add_argument('--device', type=str, default="cuda", help='["cpu", "cuda"]')
+    parser.add_argument("--device", type=str, default="cuda", help='["cpu", "cuda"]')
 
     # Other settings
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--logging_steps", type=int, default=100)
     parser.add_argument("--eval_steps", type=int, default=500)
-    parser.add_argument("--save_model", action='store_true')
+    parser.add_argument("--save_model", action="store_true")
 
     args = parser.parse_args()
 
-    if args.device == 'cuda' and not torch.cuda.is_available():
-        args.device = 'cpu'
+    if args.device == "cuda" and not torch.cuda.is_available():
+        args.device = "cpu"
 
     start_time = time.localtime()
     time_str = time.strftime("%m(M)%d(D)-%H:%M", start_time)

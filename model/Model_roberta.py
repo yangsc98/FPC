@@ -128,7 +128,6 @@ class robertaMLMRE(nn.Module):
             mlm_ratio = self.args.mlm_ratio
 
         batch_size, seq_len = input_ids.size()
-        device = input_ids.device
 
         robertaMLM_outputs = self.robertaMLM(
             input_ids=input_ids,
@@ -137,7 +136,7 @@ class robertaMLMRE(nn.Module):
         )
         MLM_loss, MLM_logits, sequence_output = robertaMLM_outputs
 
-        index_range = torch.arange(batch_size).to(device)
+        index_range = torch.arange(batch_size).to(self.args.device)
         head_output = sequence_output[index_range, subj_start]
         tail_output = sequence_output[index_range, obj_start]
 
